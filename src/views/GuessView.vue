@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { useAuthStore, usePlaylistStore, useSongStore } from '@/stores';
+import { Player } from '@/components';
 
 const authStore = useAuthStore();
 const playlistStore = usePlaylistStore();
@@ -27,6 +28,8 @@ onMounted(() => {
 
       <pre>{{ playlistId }}</pre>
       <pre>{{ songStore.selectedSong }}</pre>
+
+      <Player />
 
       <q-btn
         no-caps
