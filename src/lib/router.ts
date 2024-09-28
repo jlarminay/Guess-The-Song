@@ -1,10 +1,16 @@
-import { createMemoryHistory, createRouter } from 'vue-router';
+import { createWebHistory, createRouter } from 'vue-router';
 
-// import HomeRoutes from '../modules/home/router';
+import LoginView from '@/views/LoginView.vue';
+import DashboardView from '@/views/DashboardView.vue';
+import GuessView from '@/views/GuessView.vue';
+import AccountView from '@/views/AccountView.vue';
 
 export default createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes: [
-    // ...HomeRoutes
+    { path: '/', name: 'LoginView', component: LoginView },
+    { path: '/dashboard', name: 'DashboardView', component: DashboardView },
+    { path: '/guess/:playlistId', name: 'GuessView', component: GuessView, props: true },
+    { path: '/account', name: 'AccountView', component: AccountView },
   ],
 });
